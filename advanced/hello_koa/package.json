@@ -1,7 +1,7 @@
 {
-    "name": "hello-koa2",
-    "version": "1.0.0",
-    "description": "Hello Koa 2 example with async",
+    "name": "hello_koa",
+    "version": "1.0.1",
+    "description": "Hello Koa 2 example with nunjucks",
     "main": "app.js",
     "scripts": {
         "start": "node app.js"
@@ -10,7 +10,7 @@
         "koa",
         "async"
     ],
-    "author": "",
+    "author": "i1oy",
     "license": "Apache-2.0",
     "repository": {
         "type": "git"
@@ -18,6 +18,8 @@
     "dependencies": {
         "koa": "2.4.1",
         "koa-router": "7.3.0",
-        "koa-bodyparser": "4.2.0"
-    }
+        "koa-bodyparser": "4.2.0",
+        "nunjucks": "3.0.1"
+    },
+    "remark": "Learn JavaScript from LiaoXuefeng."
 }
