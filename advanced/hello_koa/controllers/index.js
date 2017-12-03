@@ -20,7 +20,13 @@ var fn_signin = async (ctx, next) => {
     }
 };
 
+var get_index = async (ctx, next) => {
+    ctx.render('index.html', {
+        title: 'Welcome'
+    });
+};
+
 module.exports = {
-    'GET /': fn_index,
-    'POST /signin': fn_signin
+    'GET /': get_index,
+    // 'POST /signin': fn_signin
 };
