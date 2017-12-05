@@ -1,0 +1,19 @@
+{
+    "name": "hello_mysql",
+    "version": "0.0.1",
+    "description": "Operate MySQL with node",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "i1oy",
+    "dependencies": {
+        "sequelize": "4.26.0",
+        "mysql": "2.15.0",
+        "mysql2": "1.5.1"
+    },
+    "repository": {
+        "type": "git"
+    },
+    "license": "MIT"
+}
