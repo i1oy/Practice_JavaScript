@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.22/"></script>
+    <script src="./jquery-3.2.1.min.js"></script>
+    <title>Using ArcGIS Service</title>
+</head>
+
+<body>
+    <!-- <div id="map"></div> -->
+    <div style="width:100%;height:100%" id="findResults">
+        <pre style="width:50%" id="taskResults"></pre>
+        <pre style="width:50%" id="ajaxResults"></pre>
+    </div>
+    <script>
+        var mapServerUrl = 'http://192.168.191.10:6080/arcgis/rest/services/district_qdn2/MapServer';
+        // find task
+        require(["esri/map", "dojo/domReady!",
+            "esri/tasks/FindTask", "esri/tasks/FindParameters"], function () {
+                var findTask = new esri.tasks.FindTask(mapServerUrl);
+                var findParams = new esri.tasks.FindParameters();
+                findParams.layerIds = [0];
+                findParams.searchFields = ['Name_CHN'];
+                findParams.searchText = '金河村';
+                findParams.returnGeometry = true;
+                findTask.execute(findParams, function (results) {
+                    console.log("FindTask:");
+                    console.log(results);
+                    $('#taskResults').text(
+                        JSON.stringify(results, null, 2)
+                        );
+                })
+            });
+
+        // jQuery GET
+        $.ajax({
+            url: mapServerUrl + "/find",
+            type: 'GET',
+            data: {
+                searchText: "金河村",
+                contains: true,
+                searchFields: "Name_CHN",
+                layers: 0,
+                returnGeometry: true,
+                returnZ: false,
+                returnM: false,
+                f: "json"
+            },
+            dataType: "json",
+            success: function (results) {
+                console.log("jQuery.GET:");
+                console.log(results);
+                $('#ajaxResults').text(
+                    JSON.stringify(results, null, 2)
+                );
+            },
+        });
+    </script>
+</body>
+
+</html>
