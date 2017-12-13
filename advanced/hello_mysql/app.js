@@ -5,21 +5,25 @@ let
     User = model.User;
 
 (async () => {
-    var user = await User.create({
-        name: 'LO',
-        gender: false,
-        email: 'LO@EXAMPLE.COM',
-        passwd: '******'
-    });
-    console.log('created: ' + JSON.stringify(user));
+    try {
+        var user = await User.create({
+            name: 'LO',
+            gender: false,
+            email: 'LOYOY@EXAMPLE.COM',
+            passwd: '******'
+        });
+        console.log('created: ' + JSON.stringify(user));
 
-    var cat = await Pet.create({
-        ownerId: user.id,
-        name: 'Oreo',
-        gender: false,
-        birth: '2017-05-01',
-    });
-    console.log('created: ' + JSON.stringify(cat));
+        var cat = await Pet.create({
+            ownerId: user.id,
+            name: 'Oreo',
+            gender: false,
+            birth: '2017-05-01',
+        });
+        console.log('created: ' + JSON.stringify(cat));
+    } catch (error) {
+        console.log(error);
+    }
 })();
 // const Sequelize = require('sequelize');
 // const config = require('./config');
