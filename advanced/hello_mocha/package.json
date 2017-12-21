@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Test by mocha.",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "mz": "2.7.0"
+  },
   "devDependencies": {
     "mocha": "4.0.1"
   },
