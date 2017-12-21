@@ -1,0 +1,25 @@
+{
+  "name": "koa-test",
+  "version": "1.0.0",
+  "description": "Test Koa by mocha.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node --use_strict start.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "i1oy",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "4.0.1",
+    "supertest": "3.0.0"
+  }
+}
