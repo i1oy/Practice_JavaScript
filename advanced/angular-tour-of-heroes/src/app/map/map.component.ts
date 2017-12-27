@@ -18,7 +18,7 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     this.esriLoader.load({
-      url: '//js.arcgis.com/4.5'
+      url: '//js.arcgis.com/4.6'
     }).then( () => {
       this.esriLoader.loadModules(['esri/Map', 'esri/views/SceneView'])
       .then( ([Map, SceneView]) => {
