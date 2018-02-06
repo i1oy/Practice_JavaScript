@@ -30,7 +30,16 @@ li {
 img {
     display: block;
     clear: both;
-    image-orientation: from-image;
+    /* Available in Firefox */
+    image-orientation: from-image; 
     /* image-orientation: 0deg; */
     /* -webkit-transform: rotate(90deg); */
+}
+
+#imagegallery {
+    list-style: none;
+}
+
+#imagegallery li {
+    display: inline;
 }
