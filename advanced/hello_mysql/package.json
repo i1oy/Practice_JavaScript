@@ -8,7 +8,7 @@
     },
     "author": "i1oy",
     "dependencies": {
-        "sequelize": "4.26.0",
+        "sequelize": "5.21.2",
         "mysql": "2.15.0",
         "mysql2": "1.5.1"
     },
